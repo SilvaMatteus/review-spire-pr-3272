@@ -1,0 +1,17 @@
+INFO[0000] Creating spire agent UDS directory            dir=/tmp/spire-agent/public
+WARN[0000] Current umask 0002 is too permissive; setting umask 0027 
+INFO[0000] Starting agent with data directory: "./.data" 
+INFO[0000] Plugin loaded                                 external=false plugin_name=azure_msi plugin_type=NodeAttestor subsystem_name=catalog
+INFO[0000] Plugin loaded                                 external=false plugin_name=disk plugin_type=KeyManager subsystem_name=catalog
+INFO[0000] Plugin loaded                                 external=false plugin_name=unix plugin_type=WorkloadAttestor subsystem_name=catalog
+INFO[0000] Bundle loaded                                 subsystem_name=attestor trust_domain_id="spiffe://example.org"
+DEBU[0000] No pre-existing agent SVID found. Will perform node attestation  subsystem_name=attestor
+INFO[0000] SVID is not found. Starting node attestation  subsystem_name=attestor trust_domain_id="spiffe://example.org"
+INFO[0001] Node attestation was successful               spiffe_id="spiffe://example.org/spire/agent/azure_msi/d0b49470-46d3-49eb-9bb4-96fe891119db/5dc0097f-a814-4bd8-a559-0de0eadd68af" subsystem_name=attestor trust_domain_id="spiffe://example.org"
+DEBU[0001] Bundle added                                  subsystem_name=svid_store_cache trust_domain_id=example.org
+INFO[0001] Starting Workload and SDS APIs                address=/tmp/spire-agent/public/api.sock network=unix subsystem_name=endpoints
+DEBU[0002] Starting checker                              name=agent subsystem_name=health
+DEBU[0006] Entry created                                 entry=f8cb1d6b-26eb-41d5-b145-389866884f56 selectors_added=1 spiffe_id="spiffe://example.org/agent_node" subsystem_name=cache_manager
+DEBU[0006] Renewing stale entries                        cache_type=workload count=1 limit=500 subsystem_name=manager
+INFO[0006] Renewing X509-SVID                            spiffe_id="spiffe://example.org/agent_node" subsystem_name=manager
+DEBU[0006] SVID updated                                  entry=f8cb1d6b-26eb-41d5-b145-389866884f56 spiffe_id="spiffe://example.org/agent_node" subsystem_name=cache_manager
