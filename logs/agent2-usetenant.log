@@ -1,0 +1,16 @@
+time="2022-07-28T15:49:11Z" level=warning msg="Current umask 0002 is too permissive; setting umask 0027"
+time="2022-07-28T15:49:11Z" level=info msg="Starting agent with data directory: \"./.data\""
+time="2022-07-28T15:49:11Z" level=info msg="Plugin loaded" external=false plugin_name=azure_msi plugin_type=NodeAttestor subsystem_name=catalog
+time="2022-07-28T15:49:11Z" level=info msg="Plugin loaded" external=false plugin_name=disk plugin_type=KeyManager subsystem_name=catalog
+time="2022-07-28T15:49:11Z" level=info msg="Plugin loaded" external=false plugin_name=unix plugin_type=WorkloadAttestor subsystem_name=catalog
+time="2022-07-28T15:49:11Z" level=info msg="Bundle loaded" subsystem_name=attestor trust_domain_id="spiffe://example.org"
+time="2022-07-28T15:49:11Z" level=debug msg="No pre-existing agent SVID found. Will perform node attestation" subsystem_name=attestor
+time="2022-07-28T15:49:11Z" level=info msg="SVID is not found. Starting node attestation" subsystem_name=attestor trust_domain_id="spiffe://example.org"
+time="2022-07-28T15:49:12Z" level=info msg="Node attestation was successful" spiffe_id="spiffe://example.org/spire/agent/azure_msi/d0b49470-46d3-49eb-9bb4-96fe891119db/5dc0097f-a814-4bd8-a559-0de0eadd68af" subsystem_name=attestor trust_domain_id="spiffe://example.org"
+time="2022-07-28T15:49:12Z" level=debug msg="Bundle added" subsystem_name=svid_store_cache trust_domain_id=example.org
+time="2022-07-28T15:49:12Z" level=info msg="Starting Workload and SDS APIs" address=/tmp/spire-agent/public/api.sock network=unix subsystem_name=endpoints
+time="2022-07-28T15:49:13Z" level=debug msg="Starting checker" name=agent subsystem_name=health
+time="2022-07-28T15:49:16Z" level=debug msg="Entry created" entry=024f9ba3-47e7-4afb-9283-5ab6a7c56494 selectors_added=1 spiffe_id="spiffe://example.org/agent_node" subsystem_name=cache_manager
+time="2022-07-28T15:49:16Z" level=debug msg="Renewing stale entries" cache_type=workload count=1 limit=500 subsystem_name=manager
+time="2022-07-28T15:49:16Z" level=info msg="Renewing X509-SVID" spiffe_id="spiffe://example.org/agent_node" subsystem_name=manager
+time="2022-07-28T15:49:16Z" level=debug msg="SVID updated" entry=024f9ba3-47e7-4afb-9283-5ab6a7c56494 spiffe_id="spiffe://example.org/agent_node" subsystem_name=cache_manager

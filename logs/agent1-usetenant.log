@@ -1,0 +1,29 @@
+time="2022-07-28T15:17:39Z" level=warning msg="Current umask 0002 is too permissive; setting umask 0027"
+time="2022-07-28T15:17:39Z" level=info msg="Starting agent with data directory: \"./.data\""
+time="2022-07-28T15:17:39Z" level=info msg="Plugin loaded" external=false plugin_name=unix plugin_type=WorkloadAttestor subsystem_name=catalog
+time="2022-07-28T15:17:39Z" level=info msg="Plugin loaded" external=false plugin_name=azure_msi plugin_type=NodeAttestor subsystem_name=catalog
+time="2022-07-28T15:17:39Z" level=info msg="Plugin loaded" external=false plugin_name=disk plugin_type=KeyManager subsystem_name=catalog
+time="2022-07-28T15:17:39Z" level=info msg="Bundle loaded" subsystem_name=attestor trust_domain_id="spiffe://example.org"
+time="2022-07-28T15:17:39Z" level=info msg="SVID loaded" spiffe_id="spiffe://example.org/spire/agent/azure_msi/d0b49470-46d3-49eb-9bb4-96fe891119db/5dc0097f-a814-4bd8-a559-0de0eadd68af" subsystem_name=attestor trust_domain_id="spiffe://example.org"
+time="2022-07-28T15:17:39Z" level=debug msg="Bundle updated" subsystem_name=cache_manager trust_domain_id=example.org
+time="2022-07-28T15:17:39Z" level=debug msg="Entry created" entry=59a7221e-f761-4e8e-8657-e3de04b39e51 selectors_added=1 spiffe_id="spiffe://example.org/agent_node" subsystem_name=cache_manager
+time="2022-07-28T15:17:39Z" level=debug msg="Renewing stale entries" cache_type=workload count=1 limit=500 subsystem_name=manager
+time="2022-07-28T15:17:39Z" level=info msg="Renewing X509-SVID" spiffe_id="spiffe://example.org/agent_node" subsystem_name=manager
+time="2022-07-28T15:17:39Z" level=debug msg="SVID updated" entry=59a7221e-f761-4e8e-8657-e3de04b39e51 spiffe_id="spiffe://example.org/agent_node" subsystem_name=cache_manager
+time="2022-07-28T15:17:39Z" level=debug msg="Bundle added" subsystem_name=svid_store_cache trust_domain_id=example.org
+time="2022-07-28T15:17:39Z" level=info msg="Starting Workload and SDS APIs" address=/tmp/spire-agent/public/api.sock network=unix subsystem_name=endpoints
+time="2022-07-28T15:17:40Z" level=debug msg="Starting checker" name=agent subsystem_name=health
+time="2022-07-28T15:19:47Z" level=debug msg="Stopping SVID rotator" subsystem_name=manager
+time="2022-07-28T15:19:47Z" level=info msg="Cache manager stopped" subsystem_name=manager
+time="2022-07-28T15:19:47Z" level=debug msg="Stopping checker" name=agent subsystem_name=health
+time="2022-07-28T15:19:47Z" level=info msg="Stopping Workload and SDS APIs" subsystem_name=endpoints
+time="2022-07-28T15:19:47Z" level=debug msg="Closing catalog" subsystem_name=catalog
+time="2022-07-28T15:19:47Z" level=debug msg="Unloading plugin" external=false plugin_name=disk plugin_type=KeyManager subsystem_name=catalog
+time="2022-07-28T15:19:47Z" level=debug msg="Checker exiting" name=agent subsystem_name=health
+time="2022-07-28T15:19:47Z" level=info msg="Plugin unloaded" external=false plugin_name=disk plugin_type=KeyManager subsystem_name=catalog
+time="2022-07-28T15:19:47Z" level=debug msg="Unloading plugin" external=false plugin_name=azure_msi plugin_type=NodeAttestor subsystem_name=catalog
+time="2022-07-28T15:19:47Z" level=info msg="Plugin unloaded" external=false plugin_name=azure_msi plugin_type=NodeAttestor subsystem_name=catalog
+time="2022-07-28T15:19:47Z" level=debug msg="Unloading plugin" external=false plugin_name=unix plugin_type=WorkloadAttestor subsystem_name=catalog
+time="2022-07-28T15:19:47Z" level=info msg="Plugin unloaded" external=false plugin_name=unix plugin_type=WorkloadAttestor subsystem_name=catalog
+time="2022-07-28T15:19:47Z" level=info msg="Catalog closed" subsystem_name=catalog
+time="2022-07-28T15:19:47Z" level=info msg="Agent stopped gracefully"

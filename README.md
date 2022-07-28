@@ -70,6 +70,8 @@ sudo cp -r ./spire-agent /usr/bin/
 
 In `nodeattestor/` directory run the commands below to follow the three scenarios.
 
+Each scenario has 2 configuration files, one for use when MSI authentication is enable and another for use with app_id. The SPIRE Server and SPIRE Agent are executed 2 times in each scenario.
+
 ### 4.1. SPIRE Server with Node Attestor and Node Resolver configured as normal.
 
 <br/>
@@ -81,10 +83,10 @@ Check list:
 
 <br/>
 
-Start the Spire Server with NodeAttestor and NodeResolver.
+Start the Spire Server with NodeAttestor and NodeResolver using MSI authentication.
 
 ```bash
-spire-server run -config ./conf/server/server1.conf
+spire-server run -config ./conf/server/server1-usemsi.conf
 ```
 
 Create an entry register.
@@ -101,9 +103,37 @@ Start the Spire Agent.
 spire-agent run -config ./conf/agent/agent.conf
 ```
 
-[Logs received](./logs/server1.log) from spire server.
+[Logs received](./logs/server1-usemsi.log) from spire server.
 
-[Logs received](/logs/agent.log) from spire agent.
+[Logs received](/logs/agent1-usemsi.log) from spire agent.
+
+Delete `.data` directory.
+
+```bash
+rm -rf ./.data
+```
+
+Start the Spire Server with NodeAttestor and NodeResolver using app id configuration.
+
+```bash
+spire-server run -config ./conf/server/server1-usetenant.conf
+```
+
+Create an entry register.
+
+```bash
+spire-server entry create -node -spiffeID spiffe://example.org/agent_node -selector azure_msi:vm-name:RESOURCE_GROUP:MACHINE_NAME
+```
+
+Start the Spire Agent.
+
+```bash
+spire-agent run -config ./conf/agent/agent.conf
+```
+
+[Logs received](./logs/server1-usetenant.log) from spire server.
+
+[Logs received](./logs/agent1-usetenant.log) from spire agent.
 
 Delete `.data` directory.
 
@@ -122,10 +152,10 @@ Check list:
 
 <br/>
 
-Start the Spire Server with NodeAttestor. Remember to put an **App Registration** credentials into `server2.conf` file in NodeAttestor.
+Start the Spire Server with NodeAttestor using MSI authentication. Remember to put an **App Registration** credentials into `server2-usemsi.conf` file in NodeAttestor.
 
 ```bash
-spire-server run -config ./conf/server/server2.conf
+spire-server run -config ./conf/server/server2-usemsi.conf
 ```
 
 Create an entry register.
@@ -140,9 +170,38 @@ Start the Spire Agent.
 spire-agent run -config ./conf/agent/agent.conf
 ```
 
-[Logs received](./logs/server2.log) from Spire Server.
+[Logs received](./logs/server2-usemsi.log) from Spire Server.
 
-[Logs received](./logs/agent2.log) from Spire Agent.
+[Logs received](./logs/agent2-usemsi.log) from Spire Agent.
+
+
+Delete `.data` directory.
+
+```bash
+rm -rf ./.data
+```
+
+Start the Spire Server with NodeAttestor using app id configuration. Remember to put an **App Registration** credentials into `server2-usetenant.conf` file in NodeAttestor.
+
+```bash
+spire-server run -config ./conf/server/server2-usetenant.conf
+```
+
+Create an entry register.
+
+```bash
+spire-server entry create -node -spiffeID spiffe://example.org/agent_node -selector azure_msi:vm-name:RESOURCE_GROUP:MACHINE_NAME
+```
+
+Start the Spire Agent.
+
+```bash
+spire-agent run -config ./conf/agent/agent.conf
+```
+
+[Logs received](./logs/server2-usetenant.log) from Spire Server.
+
+[Logs received](./logs/agent2-usetenant.log) from Spire Agent.
 
 
 Delete `.data` directory.
@@ -163,10 +222,10 @@ Check list:
 <br/>
 
 
-Start the Spire Server with NodeAttestor. Remember to put an **App Registration** credentials into `conf/server/server3.conf` file in NodeAttestor.
+Start the Spire Server with NodeAttestor using MSI authentication. Remember to put an **App Registration** credentials into `conf/server/server3-usemsi.conf` file in NodeAttestor.
 
 ```bash
-spire-server run -config ./conf/server/server3.conf
+spire-server run -config ./conf/server/server3-usemsi.conf
 ```
 
 Create an entry register.
@@ -181,9 +240,37 @@ Start the Spire Agent.
 spire-agent run -config ./conf/agent/agent.conf
 ```
 
-[Logs received](./logs/server3.log) from Spire Server.
+[Logs received](./logs/server3-usemsi.log) from Spire Server.
 
-[Logs received](./logs/agent3.log) from Spire Agent.
+[Logs received](./logs/agent3-usemsi.log) from Spire Agent.
+
+Delete `.data` directory.
+
+```bash
+rm -rf ./.data
+```
+
+Start the Spire Server with NodeAttestor using app id configuration. Remember to put an **App Registration** credentials into `conf/server/server3-usetenant.conf` file in NodeAttestor.
+
+```bash
+spire-server run -config ./conf/server/server3-usetenant.conf
+```
+
+Create an entry register.
+
+```bash
+spire-server entry create -node -spiffeID spiffe://example.org/agent_node -selector azure_msi:vm-name:RESOURCE_GROUP:MACHINE_NAME
+```
+
+Start the Spire Agent.
+
+```bash
+spire-agent run -config ./conf/agent/agent.conf
+```
+
+[Logs received](./logs/server3-usetenant.log) from Spire Server.
+
+[Logs received](./logs/agent3-usetenant.log) from Spire Agent.
 
 Delete `.data` directory.
 

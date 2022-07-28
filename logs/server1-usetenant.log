@@ -1,0 +1,65 @@
+time="2022-07-28T15:16:08Z" level=warning msg="Current umask 0002 is too permissive; setting umask 0027"
+time="2022-07-28T15:16:08Z" level=info msg=Configured admin_ids="[]" data_dir=./.data
+time="2022-07-28T15:16:08Z" level=warning msg="The node resolver plugin type is deprecated and will be removed from a future release" subsystem_name=catalog
+time="2022-07-28T15:16:08Z" level=info msg="Opening SQL database" db_type=sqlite3 subsystem_name=sql
+time="2022-07-28T15:16:08Z" level=debug msg="Code and DB schema versions are the same. No migration needed" schema=19 subsystem_name=sql version_info=1.4.0-dev-unk
+time="2022-07-28T15:16:08Z" level=info msg="Connected to SQL database" read_only=false subsystem_name=sql type=sqlite3 version=3.38.5
+time="2022-07-28T15:16:08Z" level=info msg="Plugin loaded" external=false plugin_name=memory plugin_type=KeyManager subsystem_name=catalog
+time="2022-07-28T15:16:09Z" level=info msg="Plugin loaded" external=false plugin_name=disk plugin_type=UpstreamAuthority subsystem_name=catalog
+time="2022-07-28T15:16:09Z" level=warning msg="No client credentials available for tenant. Selectors will not be produced by the node attestor for this node. This will be an error in a future release." external=false plugin_name=azure_msi plugin_type=NodeAttestor subsystem_name=catalog tenant=d0b49470-46d3-49eb-9bb4-96fe891119db
+time="2022-07-28T15:16:09Z" level=info msg="Plugin loaded" external=false plugin_name=azure_msi plugin_type=NodeAttestor subsystem_name=catalog
+time="2022-07-28T15:16:09Z" level=warning msg="Service is deprecated and will be removed in a future release" deprecated_service_name=spire.plugin.server.noderesolver.v1.NodeResolver external=false plugin_name=azure_msi plugin_type=NodeResolver subsystem_name=catalog
+time="2022-07-28T15:16:09Z" level=warning msg="This plugin is deprecated and will be removed from a future release. Configure the azure_msi nodeattestor to resolve selectors instead." external=false plugin_name=azure_msi plugin_type=NodeResolver subsystem_name=catalog
+time="2022-07-28T15:16:09Z" level=info msg="Plugin loaded" external=false plugin_name=azure_msi plugin_type=NodeResolver subsystem_name=catalog
+time="2022-07-28T15:16:09Z" level=debug msg="Loading journal" path=.data/journal.pem subsystem_name=ca_manager
+time="2022-07-28T15:16:09Z" level=info msg="Journal loaded" jwt_keys=1 subsystem_name=ca_manager x509_cas=1
+time="2022-07-28T15:16:09Z" level=warning msg="X509CA slot unusable" error="no key manager key" slot=A subsystem_name=ca_manager
+time="2022-07-28T15:16:09Z" level=warning msg="JWT key slot unusable" error="no key manager key" slot=A subsystem_name=ca_manager
+time="2022-07-28T15:16:09Z" level=debug msg="Preparing X509 CA" slot=A subsystem_name=ca_manager
+time="2022-07-28T15:16:09Z" level=info msg="X509 CA prepared" expiration="2022-07-29T15:16:09Z" issued_at="2022-07-28T15:16:09Z" self_signed=false slot=A subsystem_name=ca_manager
+time="2022-07-28T15:16:09Z" level=info msg="X509 CA activated" expiration="2022-07-29T15:16:09Z" issued_at="2022-07-28T15:16:09Z" slot=A subsystem_name=ca_manager
+time="2022-07-28T15:16:09Z" level=debug msg="Successfully rotated X.509 CA" subsystem_name=ca_manager trust_domain_id="spiffe://example.org" ttl=86399.962999042
+time="2022-07-28T15:16:09Z" level=debug msg="Preparing JWT key" slot=A subsystem_name=ca_manager
+time="2022-07-28T15:16:09Z" level=warning msg="UpstreamAuthority plugin does not support JWT-SVIDs. Workloads managed by this server may have trouble communicating with workloads outside this cluster when using JWT-SVIDs." plugin_name=disk subsystem_name=ca_manager
+time="2022-07-28T15:16:09Z" level=info msg="JWT key prepared" expiration="2022-07-29T15:16:09Z" issued_at="2022-07-28T15:16:09Z" slot=A subsystem_name=ca_manager
+time="2022-07-28T15:16:09Z" level=info msg="JWT key activated" expiration="2022-07-29T15:16:09Z" issued_at="2022-07-28T15:16:09Z" slot=A subsystem_name=ca_manager
+time="2022-07-28T15:16:09Z" level=debug msg="Rotating server SVID" subsystem_name=svid_rotator
+time="2022-07-28T15:16:09Z" level=debug msg="Signed X509 SVID" expiration="2022-07-28T16:16:09Z" spiffe_id="spiffe://example.org/spire/server" subsystem_name=svid_rotator
+time="2022-07-28T15:16:09Z" level=info msg="Building in-memory entry cache" subsystem_name=endpoints
+time="2022-07-28T15:16:09Z" level=info msg="Completed building in-memory entry cache" subsystem_name=endpoints
+time="2022-07-28T15:16:09Z" level=debug msg="Initializing API endpoints" subsystem_name=endpoints
+time="2022-07-28T15:16:09Z" level=info msg="Starting Server APIs" address="127.0.0.1:8081" network=tcp subsystem_name=endpoints
+time="2022-07-28T15:16:09Z" level=info msg="Starting Server APIs" address=/tmp/spire-server/private/api.sock network=unix subsystem_name=endpoints
+time="2022-07-28T15:16:09Z" level=debug msg="Starting checker" name=catalog.datastore subsystem_name=health
+time="2022-07-28T15:16:09Z" level=debug msg="Starting checker" name=server.ca subsystem_name=health
+time="2022-07-28T15:16:09Z" level=debug msg="Starting checker" name=server.ca.manager subsystem_name=health
+time="2022-07-28T15:16:09Z" level=debug msg="Starting checker" name=server subsystem_name=health
+time="2022-07-28T15:17:39Z" level=debug msg="Signed X509 SVID" authorized_as=agent authorized_via=datastore caller_addr="127.0.0.1:54554" caller_id="spiffe://example.org/spire/agent/azure_msi/d0b49470-46d3-49eb-9bb4-96fe891119db/5dc0097f-a814-4bd8-a559-0de0eadd68af" entry_id=59a7221e-f761-4e8e-8657-e3de04b39e51 expiration="2022-07-28T16:17:39Z" method=BatchNewX509SVID request_id=88a0c5e2-39c2-48d6-b856-273c42b4482d service=svid.v1.SVID spiffe_id="spiffe://example.org/agent_node" subsystem_name=api
+time="2022-07-28T15:19:43Z" level=info msg="Shutting down" subsystem_name=bundle_client
+time="2022-07-28T15:19:43Z" level=info msg="Stopping Server APIs" address="127.0.0.1:8081" network=tcp subsystem_name=endpoints
+time="2022-07-28T15:19:43Z" level=debug msg="Stopping SVID rotator" subsystem_name=svid_rotator
+time="2022-07-28T15:19:43Z" level=debug msg="Stopping in-memory entry cache hydrator" subsystem_name=endpoints
+time="2022-07-28T15:19:43Z" level=info msg="Stopping Server APIs" address=/tmp/spire-server/private/api.sock network=unix subsystem_name=endpoints
+time="2022-07-28T15:19:43Z" level=info msg="Server APIs have stopped" address="127.0.0.1:8081" network=tcp subsystem_name=endpoints
+time="2022-07-28T15:19:43Z" level=info msg="Server APIs have stopped" address=/tmp/spire-server/private/api.sock network=unix subsystem_name=endpoints
+time="2022-07-28T15:19:43Z" level=debug msg="Stopping checker" name=catalog.datastore subsystem_name=health
+time="2022-07-28T15:19:43Z" level=debug msg="Stopping checker" name=server.ca subsystem_name=health
+time="2022-07-28T15:19:43Z" level=debug msg="Stopping checker" name=server.ca.manager subsystem_name=health
+time="2022-07-28T15:19:43Z" level=debug msg="Stopping checker" name=server subsystem_name=health
+time="2022-07-28T15:19:43Z" level=debug msg="Closing catalog" subsystem_name=catalog
+time="2022-07-28T15:19:43Z" level=debug msg="Unloading plugin" external=false plugin_name=azure_msi plugin_type=NodeResolver subsystem_name=catalog
+time="2022-07-28T15:19:43Z" level=debug msg="Checker exiting" name=catalog.datastore subsystem_name=health
+time="2022-07-28T15:19:43Z" level=debug msg="Checker exiting" name=server.ca subsystem_name=health
+time="2022-07-28T15:19:43Z" level=debug msg="Checker exiting" name=server.ca.manager subsystem_name=health
+time="2022-07-28T15:19:43Z" level=debug msg="Checker exiting" name=server subsystem_name=health
+time="2022-07-28T15:19:43Z" level=info msg="Plugin unloaded" external=false plugin_name=azure_msi plugin_type=NodeResolver subsystem_name=catalog
+time="2022-07-28T15:19:43Z" level=debug msg="Unloading plugin" external=false plugin_name=azure_msi plugin_type=NodeAttestor subsystem_name=catalog
+time="2022-07-28T15:19:43Z" level=info msg="Plugin unloaded" external=false plugin_name=azure_msi plugin_type=NodeAttestor subsystem_name=catalog
+time="2022-07-28T15:19:43Z" level=debug msg="Unloading plugin" external=false plugin_name=disk plugin_type=UpstreamAuthority subsystem_name=catalog
+time="2022-07-28T15:19:43Z" level=info msg="Plugin unloaded" external=false plugin_name=disk plugin_type=UpstreamAuthority subsystem_name=catalog
+time="2022-07-28T15:19:43Z" level=debug msg="Unloading plugin" external=false plugin_name=memory plugin_type=KeyManager subsystem_name=catalog
+time="2022-07-28T15:19:43Z" level=info msg="Plugin unloaded" external=false plugin_name=memory plugin_type=KeyManager subsystem_name=catalog
+time="2022-07-28T15:19:43Z" level=info msg="Catalog closed" subsystem_name=catalog
+time="2022-07-28T15:19:43Z" level=debug msg="Closing DataStore" subsystem_name=catalog
+time="2022-07-28T15:19:44Z" level=info msg="DataStore closed" subsystem_name=catalog
+time="2022-07-28T15:19:44Z" level=info msg="Server stopped gracefully"
